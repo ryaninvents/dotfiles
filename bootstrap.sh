@@ -10,7 +10,6 @@ git init --bare --quiet $HOME/.cfg
 # echo ".cfg" >> $HOME/.gitignore
 config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 $config remote add origin "$(git config --get remote.origin.url)"
-
-mkdir -p $HOME/.config-backup && \
-	$config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | \
-	xargs -I{} mv {} $HOME/.config-backup/{}
+$config fetch origin
+$config reset --hard origin/main
+$config checkout main
