@@ -29,5 +29,13 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 alias tsnow="date '+%Y%m%d.%H%M' | tr -d \"\n\r\""
 
+# Set up personal links for local npm/Flutter/other bins
+export PATH="$HOME/.local/share/npm/bin:$PATH"
+export PATH="$PATH:$HOME/.local/share/flutter/bin"
+export PATH=$PATH:$HOME/.local/bin:$HOME/bin
+
+export EDITOR=vim
+export GIT_EDITOR=vim
+
 bindkey -v
 bindkey "^R" history-incremental-search-backward
