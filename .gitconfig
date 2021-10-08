@@ -1,0 +1,40 @@
+# Move the `[user]` stanza to `~/.gitconfig.personal` so I can commit the rest of my config publicly.
+[include]
+	path = './.gitconfig.personal'
+[color]
+  ui = true
+[core]
+	editor = /usr/bin/nano
+	excludesfile = /Users/ryan/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[alias]
+	this = rev-parse --abbrev-ref HEAD
+	puot = !git push -u origin $(git this)
+	ri = rebase -i --autosquash
+  fix = commit --fixup
+  permission-reset = !git diff -p -R | grep -E \"^(diff|(old|new) mode)\" | git apply
+
+	# Quick branch manipulation
+  cono = checkout --no-track
+  cod = checkout origin/develop -b
+  comain = checkout --no-track origin/main -b
+  mod=merge origin/develop
+  mom=merge origin/main
+  moth="!git merge origin/$(git this)"
+  moff="!git moth --ff-only"
+  mobble="!git moth --no-ff"
+
+  # Force push, to heck with consequences
+  yolo="!git puot -f"
+
+  # Force push *and* don't run tests
+  yolowhoa="!git yolo --no-verify"
+[init]
+	defaultBranch = main
+[merge]
+  conflictstyle=diff3
