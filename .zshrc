@@ -39,3 +39,4 @@ export GIT_EDITOR=vim
 
 bindkey -v
 bindkey "^R" history-incremental-search-backward
+bindkey '^ ' forward-word
