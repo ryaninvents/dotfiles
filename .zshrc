@@ -1,5 +1,9 @@
 source $HOME/.antigen/antigen.zsh
 
+if [ -f ~/.private-vars ]; then
+  source ~/.private-vars
+fi
+
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
@@ -40,3 +44,9 @@ export GIT_EDITOR=vim
 bindkey -v
 bindkey "^R" history-incremental-search-backward
 bindkey '^ ' forward-word
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f "$HOME/.local/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/.local/google-cloud-sdk/path.zsh.inc"; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f "$HOME/.local/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/.local/google-cloud-sdk/completion.zsh.inc"; fi
