@@ -4,6 +4,11 @@ if [ -f ~/.private-vars ]; then
   source ~/.private-vars
 fi
 
+# Needs to be above Antigen bundles so that `zsh-auto-nvm-use` can load correctly.
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
@@ -22,6 +27,9 @@ antigen bundle zsh-users/zsh-autosuggestions
 
 antigen bundle Tarrasch/zsh-autoenv
 
+# Auto-load the correct version of Node for the current dir
+antigen bundle Sparragus/zsh-auto-nvm-use
+
 # Load the theme.
 antigen theme candy
 
@@ -36,7 +44,7 @@ alias tsnow="date '+%Y%m%d.%H%M' | tr -d \"\n\r\""
 # Set up personal links for local npm/Flutter/other bins
 export PATH="$HOME/.local/share/npm/bin:$PATH"
 export PATH="$PATH:$HOME/.local/share/flutter/bin"
-export PATH=$PATH:$HOME/.local/bin:$HOME/bin
+export PATH=/usr/local/bin:$PATH:$HOME/.local/bin:$HOME/bin
 
 export EDITOR=vim
 export GIT_EDITOR=vim
@@ -50,3 +58,6 @@ if [ -f "$HOME/.local/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/.local/goo
 
 # The next line enables shell command completion for gcloud.
 if [ -f "$HOME/.local/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/.local/google-cloud-sdk/completion.zsh.inc"; fi
+
+# The next line enables shell command completion for nvm.
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
