@@ -40,6 +40,8 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 
 alias tsnow="date '+%Y%m%d.%H%M' | tr -d \"\n\r\""
+alias now="date '+%Y%m%d.%H%M%S' | tr -d \"\n\r\""
+alias nowz="date -u '+%Y%m%d.%H%M%Sz' | tr -d \"\n\r\""
 
 # Set up personal links for local npm/Flutter/other bins
 export PATH="$HOME/.local/share/npm/bin:$PATH"
