@@ -34,3 +34,10 @@ config push -u origin main
 # Subsequent pushes
 config push
 ```
+
+## Experimental
+
+```
+# Install everything from the Brewfile
+brew bundle
+```
