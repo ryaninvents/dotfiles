@@ -4,10 +4,6 @@ if [ -f ~/.private-vars ]; then
   source ~/.private-vars
 fi
 
-# Needs to be above Antigen bundles so that `zsh-auto-nvm-use` can load correctly.
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
@@ -26,9 +22,6 @@ antigen bundle knu/zsh-manydots-magic
 antigen bundle zsh-users/zsh-autosuggestions
 
 antigen bundle Tarrasch/zsh-autoenv
-
-# Auto-load the correct version of Node for the current dir
-antigen bundle Sparragus/zsh-auto-nvm-use
 
 # Load the theme.
 antigen theme candy
@@ -53,6 +46,9 @@ bindkey -v
 bindkey "^R" history-incremental-search-backward
 bindkey '^ ' forward-word
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f "$HOME/.local/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/.local/google-cloud-sdk/path.zsh.inc"; fi
 
@@ -61,3 +57,7 @@ if [ -f "$HOME/.local/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/.loc
 
 # The next line enables shell command completion for nvm.
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+source /usr/local/opt/chruby/share/chruby/auto.sh
+chruby ruby-3.1.2
