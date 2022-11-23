@@ -10,6 +10,7 @@ brew "kubernetes-cli", link: false
 brew "kubectx"
 brew "kustomize"
 brew "minikube"
+brew "nvm"
 brew "ruby"
 cask "cleanshot"
 cask "inkscape"
