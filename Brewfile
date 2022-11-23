@@ -1,0 +1,12 @@
+tap "homebrew/bundle"
+tap "homebrew/core"
+brew "aws-iam-authenticator"
+brew "awscli"
+brew "fzf"
+brew "gh"
+brew "git"
+brew "kubernetes-cli", link: false
+brew "kubectx"
+brew "kustomize"
+brew "minikube"
+brew "ruby"
