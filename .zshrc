@@ -67,12 +67,4 @@ if [ -f "$HOME/.local/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/.loc
 # The next line enables shell command completion for nvm.
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
-source /usr/local/opt/chruby/share/chruby/chruby.sh
-source /usr/local/opt/chruby/share/chruby/auto.sh
-chruby ruby-3.1.2
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-
-# added by travis gem
-[ ! -s /Users/ryan/.travis/travis.sh ] || source /Users/ryan/.travis/travis.sh
-
 source <(npm completion)
