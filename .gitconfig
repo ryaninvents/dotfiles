@@ -14,6 +14,9 @@
 	trustExitCode = true
 [alias]
 	this = rev-parse --abbrev-ref HEAD
+	here = rev-parse HEAD
+  yolo = "!git push -u origin $(git this) --no-verify"
+
 	puot = !git push -u origin $(git this)
 	ri = rebase -i --autosquash
   fix = commit --fixup
@@ -30,11 +33,24 @@
   mobble="!git moth --no-ff"
 
   # Force push, to heck with consequences
-  yolo="!git puot -f"
+  yolof="!git puot -f"
 
   # Force push *and* don't run tests
   yolowhoa="!git yolo --no-verify"
+
+  # @see https://stackoverflow.com/questions/1527234/finding-a-branch-point-with-git
+  oldest-ancestor = !zsh -c 'diff -u <(git rev-list --first-parent "${1:-master}") <(git rev-list --first-parent "${2:-HEAD}") | sed -ne \"s/^ //p\" | head -1' -
 [init]
 	defaultBranch = main
 [merge]
   conflictstyle=diff3
+
+# "Reuse Recorded Resolutions" for merge conflicts
+[rerere]
+	enabled = true
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+[commit]
+	gpgsign = true

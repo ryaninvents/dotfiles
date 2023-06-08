@@ -39,6 +39,14 @@ alias nowl="date '+%Y%m%d.%H%M%S' | tr -d \"\n\r\""
 alias now="date -u '+%Y%m%d.%H%M%Sz' | tr -d \"\n\r\""
 alias me="echo ryaninvents | tr -d \"\n\r\""
 alias bb="echo \$(me)/\$(now) | tr -d \"\n\r\""
+alias drpr='gh pr create --reviewer drplt/engineering'
+alias drbr='git fetch && git comain '
+alias cls=clear
+alias confetti='open raycast://confetti'
+alias gdh='git diff HEAD'
+alias y='yarn'
+alias yw='yarn workspace'
+alias ytho='yarn why'
 
 # Set up personal links for local npm/Flutter/other bins
 export PATH="$HOME/.local/share/npm/bin:$PATH"
@@ -68,3 +76,23 @@ if [ -f "$HOME/.local/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/.loc
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 source <(npm completion)
+PATH="/usr/local/bin:$PATH"
+export PATH="/opt/homebrew/opt/node@18/bin:$PATH"
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+
+
+bbb () {
+  git fetch &&
+  git comain $1 &&
+  yarn
+}
+
+mkpatch () {
+  local oldest_ancestor=$(git oldest-ancestor $1 $2)
+  local patch_name=$(echo $1 | sed 's/\//_/g')
+  git diff $oldest_ancestor..$1 > ../$patch_name.patch
+}
+
+pin () {
+  echo "current git HEAD \`$(git rev-parse HEAD)\`" | pbcopy
+}
