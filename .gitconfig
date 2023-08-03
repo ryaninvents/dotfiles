@@ -1,10 +1,7 @@
-# Move the `[user]` stanza to `~/.gitconfig.personal` so I can commit the rest of my config publicly.
-[include]
-	path = './.gitconfig.personal'
 [color]
   ui = true
 [core]
-	editor = /usr/bin/nano
+	editor = /usr/bin/vim
 	excludesfile = /Users/ryan/.gitignore_global
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
@@ -54,3 +51,7 @@
 	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
 [commit]
 	gpgsign = true
+
+# Move the `[user]` stanza to `~/.gitconfig.personal` so I can commit the rest of my config publicly.
+[include]
+	path = ./.gitconfig.personal
