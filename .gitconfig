@@ -45,12 +45,6 @@
 # "Reuse Recorded Resolutions" for merge conflicts
 [rerere]
 	enabled = true
-[gpg]
-	format = ssh
-[gpg "ssh"]
-	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
-[commit]
-	gpgsign = true
 
 # Move the `[user]` stanza to `~/.gitconfig.personal` so I can commit the rest of my config publicly.
 [include]
