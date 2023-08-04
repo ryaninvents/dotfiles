@@ -7,6 +7,11 @@
 0. Back up any dotfiles you may already have.
 1. Clone this project to any directory.
 2. Run `./bootstrap.sh`.
+3. In iTerm2, open Preferences
+    - General tab » Preferences pane
+    - Check the "Load preferences from a custom folder or URL" box
+    - Set the location to `~/.prefs/iterm2`
+    - Under "Save changes", select "Automatically"
 
 ## Common tasks
 
