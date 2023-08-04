@@ -12,6 +12,12 @@
     - Check the "Load preferences from a custom folder or URL" box
     - Set the location to `~/.prefs/iterm2`
     - Under "Save changes", select "Automatically"
+4. Create a file `~/.gitconfig.personal`
+    ```ini
+    [user]
+      email = john.smith@example.com
+      name = John Smith
+    ```
 
 ## Common tasks
 
