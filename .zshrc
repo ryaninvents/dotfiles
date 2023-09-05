@@ -64,8 +64,8 @@ export PATH="$PATH:$HOME/.local/share/flutter/bin"
 export PATH=/usr/local/bin:$PATH:$HOME/.local/bin:$HOME/bin
 export PATH="$PATH:$HOME/.gem/ruby/2.6.0/bin"
 
-export EDITOR=vim
-export GIT_EDITOR=vim
+export EDITOR="${EDITOR:-vim}"
+export GIT_EDITOR="${GIT_EDITOR:-"$EDITOR"}"
 
 export HIST_STAMPS="%Y%m%d.%H%M%S"
 
@@ -91,6 +91,9 @@ export PATH="/opt/homebrew/opt/node@18/bin:$PATH"
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
 
+export PATH="$HOME/.local/bin:$PATH"
+
+
 bbb () {
   git fetch &&
   git comain $1 &&
@@ -107,6 +110,18 @@ pin () {
   echo "current git HEAD \`$(git rev-parse HEAD)\`" | pbcopy
 }
 
+ezpull () {
+  node /Users/ryan/Projects/FOSS/ezpull/dist/index.js $@
+}
+
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 export PATH="/usr/local/opt/libpq/bin:$PATH"
+
+# pnpm
+export PNPM_HOME="/Users/ryan/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
