@@ -567,12 +567,16 @@
 			</dict>
 			<key>Ansi 7 Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<string>0.8117647</string>
+				<real>0.70325564583984812</real>
+				<key>Color Space</key>
+				<string>sRGB</string>
 				<key>Green Component</key>
-				<string>0.8431373</string>
+				<real>0.7240142822265625</real>
 				<key>Red Component</key>
-				<string>0.827451</string>
+				<real>0.71383203625041014</real>
 			</dict>
 			<key>Ansi 8 Color</key>
 			<dict>
@@ -1007,7 +1011,7 @@
 				<real>0.0</real>
 			</dict>
 			<key>Minimum Contrast</key>
-			<real>0.43964843749999999</real>
+			<real>0.66920572916666665</real>
 			<key>Mouse Reporting</key>
 			<true/>
 			<key>Name</key>
@@ -1019,11 +1023,11 @@
 			<key>Normal Font</key>
 			<string>CommitMono-Regular 12</string>
 			<key>Option Key Sends</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
 			<false/>
 			<key>Right Option Key Sends</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>Rows</key>
 			<integer>25</integer>
 			<key>Screen</key>
@@ -1290,7 +1294,7 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewPreferredModeKey</key>
-	<integer>0</integer>
+	<integer>1</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
 	<false/>
 </dict>
