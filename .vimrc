@@ -29,3 +29,7 @@ set mouse=a
 
 " Show line numbers
 set number
+
+" Use two spaces for indent
+set expandtab
+set shiftwidth=2
