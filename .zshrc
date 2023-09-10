@@ -58,6 +58,9 @@ alias pi="pnpm i"
 alias pf="pnpm --filter"
 alias pwhy="pnpm why"
 
+# Immediately execute !!, !$ without verifying
+setopt no_hist_verify
+
 # Set up personal links for local npm/Flutter/other bins
 export PATH="$HOME/.local/share/npm/bin:$PATH"
 export PATH="$PATH:$HOME/.local/share/flutter/bin"
@@ -114,12 +117,17 @@ ezpull () {
   node /Users/ryan/Projects/FOSS/ezpull/dist/index.js $@
 }
 
+export FZF_DEFAULT_OPTS='--height 40% --layout=default'
+
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+test -e "/opt/homebrew/opt/fzf/shell/key-bindings.zsh" && source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
+test -e "/opt/homebrew/opt/fzf/shell/completion.zsh" && source "/opt/homebrew/opt/fzf/shell/completion.zsh"
 
 export PATH="/usr/local/opt/libpq/bin:$PATH"
 
 # pnpm
-export PNPM_HOME="/Users/ryan/Library/pnpm"
+export PNPM_HOME="${HOME}/Library/pnpm"
+mkdir -p "$PNPM_HOME"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
