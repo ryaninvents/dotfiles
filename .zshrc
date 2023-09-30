@@ -119,6 +119,12 @@ ezpull () {
 
 export FZF_DEFAULT_OPTS='--height 40% --layout=default'
 
+function list_all() {
+    emulate -L zsh
+    ls -a
+}
+chpwd_functions=(${chpwd_functions[@]} "list_all")
+
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 test -e "/opt/homebrew/opt/fzf/shell/key-bindings.zsh" && source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
 test -e "/opt/homebrew/opt/fzf/shell/completion.zsh" && source "/opt/homebrew/opt/fzf/shell/completion.zsh"
