@@ -58,6 +58,8 @@ alias pi="pnpm i"
 alias pf="pnpm --filter"
 alias pwhy="pnpm why"
 
+alias :e="nvim"
+
 # Immediately execute !!, !$ without verifying
 setopt no_hist_verify
 
