@@ -4,7 +4,7 @@
 	editor = /usr/bin/vim
 	excludesfile = /Users/ryan/.gitignore_global
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	cmd = code --wait --diff $LOCAL $REMOTE
 	path = 
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
@@ -12,7 +12,7 @@
 [alias]
 	this = rev-parse --abbrev-ref HEAD
 	here = rev-parse HEAD
-  yolo = "!git push -u origin $(git this) --no-verify"
+  yolo = "!git push -u origin $(git this) -f"
 
 	puot = !git push -u origin $(git this)
 	ri = rebase -i --autosquash
@@ -29,11 +29,8 @@
   moff="!git moth --ff-only"
   mobble="!git moth --no-ff"
 
-  # Force push, to heck with consequences
-  yolof="!git puot -f"
-
   # Force push *and* don't run tests
-  yolowhoa="!git yolo --no-verify"
+  yooloo="!git yolo --no-verify"
 
   # @see https://stackoverflow.com/questions/1527234/finding-a-branch-point-with-git
   oldest-ancestor = !zsh -c 'diff -u <(git rev-list --first-parent "${1:-master}") <(git rev-list --first-parent "${2:-HEAD}") | sed -ne \"s/^ //p\" | head -1' -
