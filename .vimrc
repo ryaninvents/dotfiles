@@ -33,3 +33,5 @@ set number
 " Use two spaces for indent
 set expandtab
 set shiftwidth=2
+
+let mapleader = ";"
