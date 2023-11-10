@@ -111,6 +111,47 @@ In fact, you may have noticed that we're already using a highlighter to wrap the
 
 In normal mode, use the `hjkl` keys to move to the `add-highlighter global/ wrap -word -indent` line, and press `X` to highlight the line, `Y` to yank it to the default register, and `D` to remove it from its old position. Then, use `hjkl` to move below the remaining `add-highlighter` line and press `P`. The file should look a bit tidier now!
 
+## plugin management
+
+Run the following in your shell:
+
+```bash
+mkdir -p $HOME/.config/kak/bundle/
+git clone https://github.com/jdugan6240/kak-bundle $HOME/.config/kak/bundle/kak-bundle
+```
+
+Then, add the following to your `kakrc`:
+
+```
+source "%val{config}/bundle/kak-bundle/rc/kak-bundle.kak"
+bundle-noload kak-bundle https://github.com/jdugan6240/kak-bundle
+```
+
+You're now ready to start installing as many plugins as you want, like a wild animal.
+
+Start with the [Language Server Protocol](https://github.com/kak-lsp/kak-lsp) plugin. Ensure it's installed with the shell command:
+
+```bash
+brew install kak-lsp/kak-lsp/kak-lsp
+```
+
+Add this to `kakrc`
+
+```
+bundle kak-lsp https://github.com/kak-lsp/kak-lsp %{
+  hook global KakEnd .* lsp-exit
+}
+
+map global user l %{:enter-user-mode lsp<ret>} -docstring "LSP mode"
+map global insert <tab> '<a-;>:try lsp-snippets-select-next-placeholders catch %{ execute-keys -with-hooks <lt>tab> }<ret>' -docstring 'Select next snippet placeholder'
+map global object a '<a-semicolon>lsp-object<ret>' -docstring 'LSP any symbol'
+map global object <a-a> '<a-semicolon>lsp-object<ret>' -docstring 'LSP any symbol'
+map global object e '<a-semicolon>lsp-object Function Method<ret>' -docstring 'LSP function or method'
+map global object k '<a-semicolon>lsp-object Class Interface Struct<ret>' -docstring 'LSP class interface or struct'
+map global object d '<a-semicolon>lsp-diagnostic-object --include-warnings<ret>' -docstring 'LSP errors and warnings'
+map global object D '<a-semicolon>lsp-diagnostic-object<ret>' -docstring 'LSP errors'
+```
+
 ## references
 
 - https://kakoune-editor.github.io/community-articles/2021/01/01/first_two_hours_in_two_minutes.html
