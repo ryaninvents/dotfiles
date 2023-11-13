@@ -1,6 +1,10 @@
+[language_ids]
+javascript = "javascriptreact"
+typescript = "typescriptreact"
+
 [language."typescript"]
 filetypes = ["typescript","javascript"]
-roots = ["pnpm-lock.yaml","yarn.lock",".npmrc"]
+roots = ["pnpm-lock.yaml","yarn.lock",".npmrc","tsconfig.json"]
 command = "typescript-language-server"
 args = ["--stdio"]
 settings_section = "_"
