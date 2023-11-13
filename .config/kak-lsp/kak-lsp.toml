@@ -1,15 +1,10 @@
-[language_ids]
-javascript = "javascriptreact"
-typescript = "typescriptreact"
-
-[language."typescript.tsx"]
-filetypes = ["typescript.tsx","typescriptreact"]
+[language."typescript"]
+filetypes = ["typescript","javascript"]
 roots = ["pnpm-lock.yaml","yarn.lock",".npmrc"]
 command = "typescript-language-server"
 args = ["--stdio"]
+settings_section = "_"
 
-[language.typescript]
-filetypes = ["typescript"]
-roots = ["pnpm-lock.yaml","yarn.lock",".npmrc"]
-command = "typescript-language-server"
-args = ["--stdio"]
+[language.typescript.settings._]
+tsserver = {logDirectory = "/Users/ryan/Downloads/",logVerbosity = "verbose"}
+
