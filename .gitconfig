@@ -12,6 +12,9 @@
 [alias]
 	this = rev-parse --abbrev-ref HEAD
 	here = rev-parse HEAD
+  mybranches = for-each-ref --sort=-committerdate --format='%(refname:short)' refs/heads/
+  recent = "!git mybranches | head --lines 15"
+  go = "!git checkout $(git recent | fzf)"
   yolo = "!git push -u origin $(git this) -f"
 
 	puot = !git push -u origin $(git this)
