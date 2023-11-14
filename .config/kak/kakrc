@@ -15,12 +15,6 @@ hook global BufCreate .*[.](ts|tsx) %{
 }
 
 
-# `jk` for quickly exiting edit mode
-hook global InsertChar k %{ try %{
-  exec -draft hH <a-k>jk<ret> d
-  exec <esc>
-}}
-
 eval %sh{kak-lsp --kakoune -s $kak_session}
 set global lsp_cmd "kak-lsp -s %val{session} -vvv --log /tmp/kak-lsp.log"
 lsp-enable

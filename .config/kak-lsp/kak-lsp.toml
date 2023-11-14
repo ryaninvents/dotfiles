@@ -2,13 +2,12 @@
 javascript = "javascriptreact"
 typescript = "typescriptreact"
 
-[language."typescript"]
+[language.typescript]
 filetypes = ["typescript","javascript"]
 roots = ["pnpm-lock.yaml","yarn.lock",".npmrc","tsconfig.json"]
-command = "typescript-language-server"
-args = ["--stdio"]
+command = "node"
+args = ["/Users/ryan/.config/kak-lsp/tsreact/index.js", "--stdio"]
 settings_section = "_"
 
 [language.typescript.settings._]
-tsserver = {logDirectory = "/Users/ryan/Downloads/",logVerbosity = "verbose"}
 
