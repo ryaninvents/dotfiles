@@ -2,12 +2,12 @@
 javascript = "javascriptreact"
 typescript = "typescriptreact"
 
-[language.typescript]
+[language_server.typescript]
 filetypes = ["typescript","javascript"]
 roots = ["pnpm-lock.yaml","yarn.lock",".npmrc","tsconfig.json"]
-command = "node"
-args = ["/Users/ryan/.config/kak-lsp/tsreact/index.js", "--stdio"]
+command = "typescript-language-server"
+args = ["--stdio"]
 settings_section = "_"
 
-[language.typescript.settings._]
+[language_server.typescript.settings._]
 
