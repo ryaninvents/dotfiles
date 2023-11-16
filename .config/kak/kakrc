@@ -20,6 +20,7 @@ set global lsp_cmd "kak-lsp -s %val{session} -vvv --log /tmp/kak-lsp.log"
 lsp-enable
 
 source "~/.config/kak/rmk-fzf/rmk-fzf.kak"
+#source "~/.config/kak/rmk-rip/rip.kak"
 
 map global user l %{:enter-user-mode lsp<ret>} -docstring "LSP mode"
 map global insert <tab> '<a-;>:try lsp-snippets-select-next-placeholders catch %{ execute-keys -with-hooks <lt>tab> }<ret>' -docstring 'Select next snippet placeholder'
