@@ -8,14 +8,14 @@
 1. Clone this project to any directory.
 2. Run `./bootstrap.sh`.
 3. In iTerm2, open Preferences
-    - General tab » Preferences pane
-    - Check the "Load preferences from a custom folder or URL" box
-    - Set the location to `~/.prefs/iterm2`
-    - Under "Save changes", select "Automatically"
-4. Copy `.gitconfig.personal.tpl` to `.gitconfig.personal` and update to use your 1Password SSH key:
-    - Open the relevant key in 1Password
-    - Open the disclosure menu (⋮) and choose "Configure Commit Signing..."
-    - Copy the snippet under the `# 1Password commit signing` line
+   - General tab » Preferences pane
+   - Check the "Load preferences from a custom folder or URL" box
+   - Set the location to `~/.prefs/iterm2`
+   - Under "Save changes", select "Automatically"
+4. Copy `.gitconfig.tpl` to `.gitconfig` and update to use your 1Password SSH key:
+   - Open the relevant key in 1Password
+   - Open the disclosure menu (⋮) and choose "Configure Commit Signing..."
+   - Copy the snippet under the `# 1Password commit signing` line
 
 ## Common tasks
 
