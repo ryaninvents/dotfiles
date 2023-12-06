@@ -2,10 +2,10 @@
   ui = true
 [core]
 	editor = /usr/bin/vim
-	excludesfile = /Users/ryan/.gitignore_global
+	excludesFile = ~/.gitignore
 [difftool "sourcetree"]
 	cmd = code --wait --diff $LOCAL $REMOTE
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
@@ -45,7 +45,3 @@
 # "Reuse Recorded Resolutions" for merge conflicts
 [rerere]
 	enabled = true
-
-# Move the `[user]` stanza to `~/.gitconfig.personal` so I can commit the rest of my config publicly.
-[include]
-	path = ./.gitconfig.personal
