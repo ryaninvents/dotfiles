@@ -16,6 +16,7 @@
    - Open the relevant key in 1Password
    - Open the disclosure menu (⋮) and choose "Configure Commit Signing..."
    - Copy the snippet under the `# 1Password commit signing` line
+5. If you are in a dev container, you may need to rebuild the container to make sure the SSH agent is set up correctly in .gitconfig.
 
 ## Common tasks
 
