@@ -1,11 +1,14 @@
-set -add global autoinfo normal
+#set -add global autoinfo normal
 
 set-option global tabstop 2
 set-option global indentwidth 2
 set-option global scrolloff 1,3
 
 add-highlighter global/ number-lines -hlcursor
-add-highlighter global/ wrap -word -indent
+#add-highlighter global/ wrap -word -indent
+#
+add-highlighter global/ show-matching
+set-face global MatchingChar black,red+b
 
 # Language server
 
@@ -14,13 +17,24 @@ hook global BufCreate .*[.](ts|tsx) %{
     set buffer filetype typescript
 }
 
+hook global WinSetOption filetype=javascript %{
+  set-option window formatcmd 'prettier'
+  hook buffer BufWritePre .* %{format}
+}
+
+hook global WinSetOption filetype=typescript %{
+  set-option window formatcmd 'prettier --parser typescript'
+  hook buffer BufWritePre .* %{format}
+}
 
 eval %sh{kak-lsp --kakoune -s $kak_session}
 set global lsp_cmd "kak-lsp -s %val{session} -vvv --log /tmp/kak-lsp.log"
 lsp-enable
 
+#source "%val{runtime}/rc/tools/git.kak"
 source "~/.config/kak/rmk-fzf/rmk-fzf.kak"
 #source "~/.config/kak/rmk-rip/rip.kak"
+
 
 map global user l %{:enter-user-mode lsp<ret>} -docstring "LSP mode"
 map global insert <tab> '<a-;>:try lsp-snippets-select-next-placeholders catch %{ execute-keys -with-hooks <lt>tab> }<ret>' -docstring 'Select next snippet placeholder'
@@ -30,3 +44,7 @@ map global object e '<a-semicolon>lsp-object Function Method<ret>' -docstring 'L
 map global object k '<a-semicolon>lsp-object Class Interface Struct<ret>' -docstring 'LSP class interface or struct'
 map global object d '<a-semicolon>lsp-diagnostic-object --include-warnings<ret>' -docstring 'LSP errors and warnings'
 map global object D '<a-semicolon>lsp-diagnostic-object<ret>' -docstring 'LSP errors'
+
+# Clipboard management
+map -docstring "yank the selection into the clipboard" global user y "<a-|> pbcopy<ret>"
+map -docstring "paste the clipboard" global user p "<a-!> pbpaste<ret>"
