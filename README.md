@@ -46,9 +46,3 @@ config push -u origin main
 config push
 ```
 
-## Experimental
-
-```
-# Install everything from the Brewfile
-brew bundle
-```
