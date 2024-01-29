@@ -4,6 +4,7 @@ if [ -f ~/.private-vars ]; then
   source ~/.private-vars
 fi
 
+source ~/._vars.sh
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh

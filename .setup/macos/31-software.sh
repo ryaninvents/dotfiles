@@ -1,5 +1,7 @@
 #!/bin/sh
 
+source "$HOME/._vars.sh"
+
 brewfile_dir="$(dirname "$0")/Brewfiles"
 essentials_path="$brewfile_dir/essentials.Brewfile"
 advanced_dev_path="$brewfile_dir/advanced-dev.Brewfile"

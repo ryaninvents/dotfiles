@@ -1,6 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 
+source "$HOME/._vars.sh"
+
 echo 'Installing pyenv...'
 brew install pyenv
 
