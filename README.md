@@ -5,18 +5,19 @@
 ## Manual installation
 
 0. Back up any dotfiles you may already have.
-1. Clone this project to any directory.
-2. Run `./bootstrap.sh`.
-3. In iTerm2, open Preferences
+1. MacOS: Run `xcode-select --install` if necessary to install Git.
+2. Clone this project to any directory.
+3. Run `./bootstrap.sh`.
+4. In iTerm2, open Preferences
    - General tab » Preferences pane
    - Check the "Load preferences from a custom folder or URL" box
    - Set the location to `~/.prefs/iterm2`
    - Under "Save changes", select "Automatically"
-4. Copy `.gitconfig.tpl` to `.gitconfig` and update to use your 1Password SSH key:
+5. Copy `.gitconfig.tpl` to `.gitconfig` and update to use your 1Password SSH key:
    - Open the relevant key in 1Password
    - Open the disclosure menu (⋮) and choose "Configure Commit Signing..."
    - Copy the snippet under the `# 1Password commit signing` line
-5. If you are in a dev container, you may need to rebuild the container to make sure the SSH agent is set up correctly in .gitconfig.
+6. If you are in a dev container, you may need to rebuild the container to make sure the SSH agent is set up correctly in .gitconfig.
 
 ## Common tasks
 
