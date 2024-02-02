@@ -12,7 +12,9 @@
    - General tab » Preferences pane
    - Check the "Load preferences from a custom folder or URL" box
    - Set the location to `~/.prefs/iterm2`
-   - Under "Save changes", select "Automatically"
+   - Quit and reopen (settings should now be applied)
+   - Go back to the preferences tab
+   - Under "save changes", select "Automatically"
 5. Copy `.gitconfig.tpl` to `.gitconfig` and update to use your 1Password SSH key:
    - Open the relevant key in 1Password
    - Open the disclosure menu (⋮) and choose "Configure Commit Signing..."
