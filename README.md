@@ -15,10 +15,9 @@
    - Quit and reopen (settings should now be applied)
    - Go back to the preferences tab
    - Under "save changes", select "Automatically"
-5. Copy `.gitconfig.tpl` to `.gitconfig` and update to use your 1Password SSH key:
-   - Open the relevant key in 1Password
-   - Open the disclosure menu (⋮) and choose "Configure Commit Signing..."
-   - Copy the snippet under the `# 1Password commit signing` line
+5. Set up your 1Password SSH key:
+   - If you haven't already done so, [create an SSH key item in 1Password](https://developer.1password.com/docs/ssh/manage-keys/).
+   - Configure the [1Password SSH agent](https://developer.1password.com/docs/ssh/agent).
 6. If you are in a dev container, you may need to rebuild the container to make sure the SSH agent is set up correctly in .gitconfig.
 
 ## Common tasks
