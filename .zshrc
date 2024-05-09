@@ -92,18 +92,13 @@ if [ -f "$HOME/.local/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/.loc
 
 source <(npm completion)
 PATH="/usr/local/bin:$PATH"
+export DENO_INSTALL="/Users/ryan/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/opt/homebrew/opt/node@18/bin:$PATH"
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
-
 export PATH="$HOME/.local/bin:$PATH"
-
-
-bbb () {
-  git fetch &&
-  git comain $1 &&
-  yarn
-}
 
 mkpatch () {
   local oldest_ancestor=$(git oldest-ancestor $1 $2)
@@ -132,6 +127,7 @@ test -e "/opt/homebrew/opt/fzf/shell/key-bindings.zsh" && source "/opt/homebrew/
 test -e "/opt/homebrew/opt/fzf/shell/completion.zsh" && source "/opt/homebrew/opt/fzf/shell/completion.zsh"
 
 export PATH="/usr/local/opt/libpq/bin:$PATH"
+export PATH="${HOME}/.pyenv/shims:${PATH}"
 
 # pnpm
 export PNPM_HOME="${HOME}/Library/pnpm"
@@ -141,3 +137,5 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+
