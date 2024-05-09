@@ -42,6 +42,9 @@
 [merge]
   conflictstyle=diff3
 
+[fetch]
+	prune = true
+
 # "Reuse Recorded Resolutions" for merge conflicts
 [rerere]
 	enabled = true
