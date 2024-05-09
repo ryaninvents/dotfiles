@@ -4,6 +4,7 @@ if [ -f ~/.private-vars ]; then
   source ~/.private-vars
 fi
 
+source ~/._vars.sh
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
@@ -58,7 +59,7 @@ alias pi="pnpm i"
 alias pf="pnpm --filter"
 alias pwhy="pnpm why"
 
-alias :e="nvim"
+alias :e="$EDITOR"
 
 # Immediately execute !!, !$ without verifying
 setopt no_hist_verify
