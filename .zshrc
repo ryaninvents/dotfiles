@@ -148,3 +148,5 @@ if which brew > /dev/null; then
     source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
   fi
 fi
+
+[ -s ~/.local/try.rb ] && eval "$(ruby ~/.local/try.rb init ~/Work/tries)"

@@ -9,10 +9,11 @@
   "modules-right": [
     "group/tray-expander",
     "bluetooth",
+    "custom/tailscale",
     "network",
     "pulseaudio",
     "cpu",
-    "battery"
+    "battery",
   ],
   "hyprland/workspaces": {
     "on-click": "activate",
@@ -53,7 +54,19 @@
     "signal": 7,
     "interval": 21600
   },
-
+  "custom/tailscale" : {
+    "exec": "~/.config/waybar/scripts/waybar-tailscale.sh --status",
+    "on-click": "exec ~/.config/waybar/scripts/waybar-tailscale.sh --toggle",
+    "exec-on-event": true,
+    "format": "[{icon}] ",
+    "format-icons": {
+        "connected": "T",
+        "stopped": "x"
+    },
+    "tooltip": true,
+    "return-type": "json",
+    "interval": 3
+  },
   "cpu": {
     "interval": 5,
     "format": "󰍛",
