@@ -146,6 +146,16 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
+# Added by Antigravity
+export PATH="/Users/ryan/.antigravity/antigravity/bin:$PATH"
+
+# opencode
+[ -s ~/.opencode ] && export PATH=$HOME/.opencode/bin:$PATH
+
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f "$HOME/.local/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/.local/google-cloud-sdk/path.zsh.inc"; fi
 
@@ -154,14 +164,9 @@ if [ -f "$HOME/.local/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/.loc
 
 # The next line enables shell command completion for nvm.
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-. "$HOME/.langflow/uv/env"
+[ -s "$HOME/.langflow/uv" ] && . "$HOME/.langflow/uv/env"
 
 autoload edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd q edit-command-line
 
-# Added by Antigravity
-export PATH="/Users/ryan/.antigravity/antigravity/bin:$PATH"
-
-# opencode
-[ -s ~/.opencode ] && export PATH=$HOME/.opencode/bin:$PATH
