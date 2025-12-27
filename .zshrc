@@ -59,13 +59,16 @@ alias pi="pnpm i"
 alias pf="pnpm --filter"
 alias pwhy="pnpm why"
 
+alias oldvim="/usr/bin/vim"
+alias vim="nvim"
+
 alias :e="$EDITOR"
 
 # Immediately execute !!, !$ without verifying
 setopt no_hist_verify
 
 # Set up personal links for local npm/Flutter/other bins
-export PATH="$HOME/.local/share/npm/bin:$PATH"
+# export PATH="$HOME/.local/share/npm/bin:$PATH"
 export PATH="$PATH:$HOME/.local/share/flutter/bin"
 export PATH=/usr/local/bin:$PATH:$HOME/.local/bin:$HOME/bin
 export PATH="$PATH:$HOME/.gem/ruby/2.6.0/bin"
@@ -79,17 +82,6 @@ bindkey -v
 bindkey "^R" history-incremental-search-backward
 bindkey '^ ' forward-word
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f "$HOME/.local/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/.local/google-cloud-sdk/path.zsh.inc"; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f "$HOME/.local/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/.local/google-cloud-sdk/completion.zsh.inc"; fi
-
-# The next line enables shell command completion for nvm.
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 source <(npm completion)
 PATH="/usr/local/bin:$PATH"
@@ -150,3 +142,23 @@ if which brew > /dev/null; then
 fi
 
 [ -s ~/.local/try.rb ] && eval "$(ruby ~/.local/try.rb init ~/Work/tries)"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f "$HOME/.local/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/.local/google-cloud-sdk/path.zsh.inc"; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f "$HOME/.local/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/.local/google-cloud-sdk/completion.zsh.inc"; fi
+
+# The next line enables shell command completion for nvm.
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+. "$HOME/.langflow/uv/env"
+
+autoload edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd q edit-command-line
+
+# Added by Antigravity
+export PATH="/Users/ryan/.antigravity/antigravity/bin:$PATH"
