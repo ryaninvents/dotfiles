@@ -2,7 +2,7 @@
 config-file = ?"~/.config/omarchy/current/theme/ghostty.conf"
 
 # Font
-font-family = "CommitMono"
+font-family = "GeistMono Nerd Font Mono"
 font-style = Regular
 font-size = 9
 
