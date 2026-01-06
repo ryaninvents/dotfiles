@@ -1,57 +1,37 @@
 local M = {}
 
-local colors = {
-  bg = { ctermbg = "White" },
-  red = { ctermfg = "Red" },
-  green = { ctermfg = "Green" },
-  blue = { ctermfg = "Blue" },
-  cyan = { ctermfg = "Cyan" },
-  purple = { ctermfg = "Purple" },
-  magenta = { ctermfg = "Magenta" },
-  magentaDark = { ctermfg = "DarkMagenta" },
-  fg = { ctermfg = "Black" },
-  orange = { ctermfg = "Orange" },
-  lightMagenta = { ctermfg = "LightMagenta" },
-  yellowDark = { ctermfg = "YellowDark" },
-  blueLight = { ctermfg = "BlueLight" },
-  redDark = { ctermfg = "RedDark" },
-  orangeLight = { ctermfg = "OrangeLight" },
-}
+-- Untheme: keep Neovim using the terminal palette only.
+-- We avoid any GUI hex colors and rely on cterm attributes
+-- so your terminal's preset colors decide the look.
 
-local function set_groups()
-  local groups = {
-    -- base
-    Normal = colors.fg,
-    LineNr = colors.cyan,
-    CursorLine = { bg = "#eeeeee" },
-    Cursor = { ctermbg = "Black", ctermfg = "White" },
-    Constant = colors.magentaDark,
-    String = { ctermfg = "DarkGreen" },
-    Character = colors.magentaDark,
-    Number = colors.magentaDark,
-    Float = colors.magentaDark,
-    Boolean = colors.magentaDark,
-    Comment = { ctermfg = "Black", italic = true, bold = true },
-    Keyword = { italic = true },
-    Search = { ctermbg = "LightMagenta" },
-    Visual = { ctermbg = "LightCyan" },
-  }
-
-  for group, parameters in pairs(groups) do
-    vim.api.nvim_set_hl(0, group, parameters)
-  end
+local function hi(group, spec)
+  vim.api.nvim_set_hl(0, group, spec)
 end
 
-function M.colorscheme()
-  vim.g.colors_name = "untheme"
+function M.apply()
+  -- ensure we use terminal colors (cterm) not GUI hex
+  vim.opt.termguicolors = false
 
-  vim.cmd("highlight clear")
-  vim.cmd("syntax reset")
-  vim.cmd("set notermguicolors")
+  -- Minimal, safe tweaks that don't pick specific RGB colors
+  -- and generally look OK across palettes. We intentionally
+  -- keep Normal/StatusLine/etc. mostly to defaults.
 
-  vim.o.background = "light"
+  -- Use inverted colors for selections/search so they are always visible
+  hi("Visual", { reverse = true })
+  hi("Search", { reverse = true })
+  hi("IncSearch", { reverse = true, bold = true })
 
-  set_groups()
+  -- Keep cursorline subtle without forcing a color; many terminals do underline
+  hi("CursorLine", {})
+  hi("CursorLineNr", { bold = true })
+
+  -- Keep Normal transparent to terminal background
+  -- (no explicit fg/bg so terminal decides)
+  hi("Normal", {})
+  hi("NormalFloat", {})
+
+  -- Window separators readable without choosing colors
+  hi("WinSeparator", { bold = true })
 end
 
 return M
