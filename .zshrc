@@ -162,3 +162,6 @@ bindkey -M vicmd q edit-command-line
 
 # Added by Antigravity
 export PATH="/Users/ryan/.antigravity/antigravity/bin:$PATH"
+
+# opencode
+[ -s ~/.opencode ] && export PATH=$HOME/.opencode/bin:$PATH
