@@ -170,3 +170,10 @@ autoload edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd q edit-command-line
 
+
+# bun completions
+[ -s "/home/ryan/.bun/_bun" ] && source "/home/ryan/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
