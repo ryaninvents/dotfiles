@@ -15,7 +15,9 @@ local function apply_core()
   hi("CursorLineNr", {})
 
   hi("Normal", {})
-  hi("NormalFloat", {})
+  hi("NormalFloat", { ctermbg = 15 })
+  hi("FloatBorder", { ctermbg = 15 })
+  hi("Pmenu", { ctermbg = 15 })
 
   hi("WinSeparator", {})
 
@@ -23,6 +25,11 @@ local function apply_core()
   hi("Bold", { bold = true })
   hi("Italic", { italic = true })
   hi("Underlined", { underline = true })
+
+  -- LSP document highlights: yellow background with blue text instead of reverse
+  hi("LspReferenceText", { ctermfg = 0, ctermbg = 11 })
+  hi("LspReferenceRead", { ctermfg = 0, ctermbg = 11 })
+  hi("LspReferenceWrite", { ctermfg = 0, ctermbg = 11 })
 end
 
 function M.apply()
