@@ -43,9 +43,6 @@ alias bb="echo \$(me)/\$(now) | tr -d \"\n\r\""
 
 alias gdh='git diff HEAD'
 
-alias drpr='gh pr create --reviewer drplt/engineering'
-alias drbr='git fetch && git comain '
-
 alias cls=clear
 
 alias confetti='open raycast://confetti'
@@ -73,11 +70,13 @@ export PATH="$PATH:$HOME/.local/share/flutter/bin"
 export PATH=/usr/local/bin:$PATH:$HOME/.local/bin:$HOME/bin
 export PATH="$PATH:$HOME/.gem/ruby/2.6.0/bin"
 
-export EDITOR="${EDITOR:-vim}"
+export EDITOR="${EDITOR:-nvim}"
 export GIT_EDITOR="${GIT_EDITOR:-"$EDITOR"}"
 
 export HIST_STAMPS="%Y%m%d.%H%M%S"
 
+autoload -U select-word-style
+select-word-style shell
 bindkey -v
 bindkey "^R" history-incremental-search-backward
 bindkey '^ ' forward-word
@@ -121,6 +120,26 @@ test -e "/opt/homebrew/opt/fzf/shell/completion.zsh" && source "/opt/homebrew/op
 
 export PATH="/usr/local/opt/libpq/bin:$PATH"
 export PATH="${HOME}/.pyenv/shims:${PATH}"
+
+yay () {
+  confetti
+  afplay ~/.sounds/yay.mp3
+}
+
+sadtrombone () {
+  afplay ~/.sounds/sadtrombone.mp3
+}
+
+noisy () {
+  $@ && yay || sadtrombone
+}
+
+autoload edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd q edit-command-line
+
+alias vim="nvim"
+
 
 # pnpm
 export PNPM_HOME="${HOME}/Library/pnpm"

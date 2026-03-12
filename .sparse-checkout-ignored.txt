@@ -1,0 +1,6 @@
+# Files to exclude from checkout via sparse checkout.
+# These exist in the repo (e.g. for display on GitHub) but should
+# never be written to $HOME.
+# Prefix with / to match root only (recommended); without / matches at any depth.
+/README.md
+/bootstrap.sh
