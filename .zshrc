@@ -15,9 +15,7 @@
 # ============================================================================
 
 # Source personal config
-for f in ~/.config/zsh/*.zsh; do
-  source "$f"
-done
+source ~/.config/zsh/main.zsh
 
 # Private vars (API keys, tokens, etc.)
 if [ -f ~/.private-vars ]; then
@@ -42,7 +40,7 @@ esac
 # pnpm end
 
 # bun completions
-[ -s "/home/ryan/.bun/_bun" ] && source "/home/ryan/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
