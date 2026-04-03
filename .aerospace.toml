@@ -55,7 +55,7 @@ automatically-unhide-macos-hidden-apps = false
     inner.vertical =   8
     outer.left =       8
     outer.bottom =     8
-    outer.top =        [{monitor."Built-in Retina Display" = 8},48]
+    outer.top =        [{monitor."Built-in Retina Display" = 12},12]
     outer.right =      8
 
 # 'main' binding mode declaration
@@ -121,6 +121,7 @@ automatically-unhide-macos-hidden-apps = false
     alt-7 = 'workspace 7'
     alt-8 = 'workspace 8'
     alt-9 = 'workspace 9'
+    alt-0 = 'workspace 10'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
     alt-shift-1 = ['move-node-to-workspace 1', 'workspace 1']
@@ -132,6 +133,7 @@ automatically-unhide-macos-hidden-apps = false
     alt-shift-7 = ['move-node-to-workspace 7', 'workspace 7']
     alt-shift-8 = ['move-node-to-workspace 8', 'workspace 8']
     alt-shift-9 = ['move-node-to-workspace 9', 'workspace 9']
+    alt-shift-0 = ['move-node-to-workspace 10', 'workspace 10']
 
     alt-shift-x = 'enable toggle'
 
@@ -139,6 +141,7 @@ automatically-unhide-macos-hidden-apps = false
     alt-semicolon = 'workspace-back-and-forth'
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
     alt-tab = 'move-workspace-to-monitor --wrap-around next'
+    alt-shift-tab = 'move-workspace-to-monitor --wrap-around prev'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#mode
     alt-shift-semicolon = 'mode service'

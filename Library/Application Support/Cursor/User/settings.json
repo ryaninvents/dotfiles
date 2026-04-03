@@ -1,0 +1,227 @@
+{
+  "editor.fontFamily": "'GeistMono Nerd Font Mono','ZedMono Nerd Font Mono', CommitMono, 'JetBrains Mono','IBM Plex Mono', 'Cascadia Code', Menlo, Monaco, 'Courier New', monospace",
+  "editor.formatOnSave": true,
+  "editor.inlineSuggest.enabled": true,
+  "editor.lineHeight": 1.0625,
+  "editor.tabSize": 2,
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "workbench.colorTheme": "Alabaster",
+  "workbench.iconTheme": "vscode-great-icons",
+  "workbench.editor.tabSizing": "shrink",
+  "workbench.startupEditor": "none",
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.jsx": "${capture}.js",
+    "*.ts": "${capture}.js, ${capture}.spec.ts, ${capture}.*.spec.ts, ${capture}.test.ts, ${capture}.test.tsx, ${capture}.*.test.ts, ${capture}.stories.ts, ${capture}.stories.tsx, ${capture}.stories.js, ${capture}.stories.jsx",
+    "*.tsx": "${capture}.js, ${capture}.spec.ts, ${capture}.*.spec.ts, ${capture}.test.ts, ${capture}.test.tsx, ${capture}.*.test.ts, ${capture}.stories.ts, ${capture}.stories.tsx, ${capture}.stories.js, ${capture}.stories.jsx",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, pnpm-workspace.yaml, .nvmrc, .node-version, .npmrc, .yarnrc.yml, node_modules, .yarnrc, nx.json",
+    "README.md": "LICENSE, LICENSE.md, LICENSE.txt, CHANGELOG.md, TOOLING.md",
+    "tsconfig.json": "tsconfig.*.json",
+    "Dockerfile": ".dockerignore",
+    ".prettierrc.json": ".prettierignore",
+    ".eslintrc.json": ".eslintignore",
+    "config.yml": "config.*.yml",
+    "Jenkinsfile": "Jenkinsfile-*",
+    ".env": ".env.*"
+  },
+  "window.density.editorTabHeight": "compact",
+  "workbench.editor.centeredLayoutFixedWidth": true,
+  "workbench.editor.customLabels.patterns": {
+    "**/routes/**/route.{js,jsx,ts,tsx}": "${dirname}/route",
+    "**/index.{js,jsx,ts,tsx}": "${dirname}",
+    "**/src/index.{js,jsx,ts,tsx}": "${dirname(1)}/index",
+    "**/package.json": "${dirname}",
+    "**/README.md": "README - ${dirname}"
+  },
+  "explorer.autoReveal": "focusNoScroll",
+  "editor.minimap.enabled": false,
+  "breadcrumbs.symbolSortOrder": "name",
+  "emmet.showExpandedAbbreviation": "never",
+  "prettier.singleQuote": true,
+  "javascript.preferences.quoteStyle": "single",
+  "typescript.preferences.quoteStyle": "single",
+  "editor.wordWrapColumn": 120,
+  "editor.guides.bracketPairs": "active",
+  "editor.linkedEditing": true,
+  "editor.rulers": [120],
+  "javascript.preferences.jsxAttributeCompletionStyle": "none",
+  "typescript.preferences.jsxAttributeCompletionStyle": "none",
+  "javascript.autoClosingTags": false,
+  "typescript.autoClosingTags": false,
+  "html.autoCreateQuotes": false,
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "html.autoClosingTags": false,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "eslint.format.enable": true,
+  "eslint.codeAction.showDocumentation": {
+    "enable": false
+  },
+  "git-blame.config.showBlameInline": false,
+  "github-enterprise.uri": "https://github.roving.com",
+  "githubPullRequests.pullBranch": "never",
+  "githubPullRequests.fileListLayout": "tree",
+  "githubPullRequests.queries": [
+    {
+      "label": "Local Pull Request Branches",
+      "query": "default"
+    },
+    {
+      "label": "Waiting For My Review",
+      "query": "repo:${owner}/${repository} is:open review-requested:${user}"
+    },
+    {
+      "label": "Assigned To Me",
+      "query": "repo:${owner}/${repository} is:open assignee:${user}"
+    },
+    {
+      "label": "Created By Me",
+      "query": "repo:${owner}/${repository} is:open author:${user}"
+    },
+    {
+      "label": "All Open",
+      "query": "default"
+    }
+  ],
+  "diffEditor.renderSideBySide": true,
+  "diffEditor.experimental.showMoves": true,
+  "gitlens.autolinks": [
+    {
+      "prefix": "CPD-",
+      "url": "https://ctct.atlassian.net/browse/CPD-<num>"
+    }
+  ],
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "terminal.integrated.fontSize": 11,
+  "explorer.confirmDelete": false,
+  "continue.enableTabAutocomplete": true,
+  "playwright.env": {
+    "CTCT_DONT_CAPTURE_RESPONSES": "true"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.vscode-xml"
+  },
+  "[markdown]": {
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "editor.unicodeHighlight.invisibleCharacters": false,
+    "files.autoSave": "afterDelay",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "strings": "off",
+      "other": "off"
+    }
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "githubPullRequests.experimental.useQuickChat": true,
+  "githubPullRequests.experimental.notificationsView": true,
+  "githubPullRequests.experimental.chat": true,
+  "githubPullRequests.remotes": ["origin"],
+  "window.commandCenter": true,
+  "gitlens.views.scm.grouped.views": {
+    "commits": true,
+    "branches": true,
+    "remotes": true,
+    "stashes": true,
+    "tags": true,
+    "worktrees": true,
+    "contributors": true,
+    "fileHistory": false,
+    "repositories": false,
+    "searchAndCompare": true,
+    "launchpad": false
+  },
+  "workbench.editor.editorActionsLocation": "titleBar",
+  "workbench.editor.alwaysShowEditorActions": true,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "explorer.confirmDragAndDrop": false,
+  "[jsonl]": {
+    "editor.wordWrap": "off",
+    "diffEditor.wordWrap": "off"
+  },
+  "continue.disableQuickFix": true,
+  "gitlens.rebaseEditor.ordering": "asc",
+  "editor.cursorSmoothCaretAnimation": "explicit",
+  "editor.fontVariations": "'wght' 300",
+  "editor.fontLigatures": false,
+  "git.openRepositoryInParentFolders": "never",
+  "git.allowNoVerifyCommit": true,
+  "terminal.external.osxExec": "iTerm.app",
+  "merge-conflict.autoNavigateNextConflict.enabled": true,
+  "git.mergeEditor": true,
+  "githubPullRequests.focusedMode": "overview",
+  "githubPullRequests.showPullRequestNumberInTree": true,
+  "typescript.preferences.useAliasesForRenames": false,
+  "javascript.preferences.useAliasesForRenames": false,
+  "gitlens.views.launchpad.files.layout": "tree",
+  "cursor.composer.collapsePaneInputBoxPills": true,
+  "cursor.composer.shouldAllowCustomModes": true,
+  "cursor.composer.shouldChimeAfterChatFinishes": true,
+  "gitlens.ai.model": "gitkraken",
+  "gitlens.ai.gitkraken.model": "gemini:gemini-2.0-flash",
+  "zenMode.showTabs": "none",
+  "[java]": {
+    "editor.defaultFormatter": "redhat.java"
+  },
+  "editor.formatOnSaveMode": "modifications",
+  "cursor.composer.textSizeScale": 0.85,
+  "security.promptForLocalFileProtocolHandling": false,
+  "cursor.cpp.enablePartialAccepts": true,
+  "editor.copyWithSyntaxHighlighting": false,
+  "postman.settings.dotenv-detection-notification-visibility": false,
+  "vim.useCtrlKeys": true,
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": "<C-e>",
+      "commands": ["editor.action.smartSelect.expand"]
+    },
+    {
+      "before": "<C-y>",
+      "commands": ["editor.action.smartSelect.shrink"]
+    },
+    {
+      // Go to previous method with [m
+      "before": ["[", "m"],
+      "commands": ["editor.action.previousMethodOrAttributeKeys"]
+    },
+    {
+      // Go to next method with ]m
+      "before": ["]", "m"],
+      "commands": ["editor.action.nextMethodOrAttributeKeys"]
+    }
+  ],
+  "editor.fontSize": 11,
+  "gitlens.codeLens.authors.enabled": false,
+  "gitlens.codeLens.recentChange.enabled": false,
+  "gitlens.currentLine.enabled": false,
+  "extensions.ignoreRecommendations": true,
+  "git.blame.editorDecoration.enabled": false
+}

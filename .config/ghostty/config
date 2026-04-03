@@ -1,39 +1,45 @@
-# Dynamic theme colors
-# Theme: Flexoki Light
-background = #fffcf0
-foreground = #100f0f
-selection-background = #cecdc3
-selection-foreground = #100f0f
-cursor-color = #100f0f
-palette = 0=#100f0f
-palette = 1=#af3029
-palette = 2=#66800b
-palette = 3=#ad8301
-palette = 4=#205ea6
-palette = 5=#a02f6f
-palette = 6=#24837b
-palette = 7=#6f6e69
-palette = 8=#b7b5ac
-palette = 9=#d14d41
-palette = 10=#879a39
-palette = 11=#d0a215
-palette = 12=#4385be
-palette = 13=#ce5d97
-palette = 14=#3aa99f
-palette = 15=#cecdc3
+background = #ffffff
+foreground = #000000
+selection-background = #d8dae1
+selection-foreground = #4c4f69
+cursor-color = #dc8a78
+cursor-text = #eff1f5
+palette = 0=#222222
+palette = 1=#e7000b
+palette = 2=#00a63e
+palette = 3=#d08700
+palette = 4=#155dfc
+palette = 5=#c800de
+palette = 6=#009689
+palette = 7=#cad5e2
+palette = 8=#45556c
+palette = 9=#ffa1ad
+palette = 10=#9ae600
+palette = 11=#ffdf20
+palette = 12=#74d4ff
+palette = 13=#fda5d5
+palette = 14=#00d3f3
+palette = 15=#f1f5f9
+
 
 # Font
 font-family = "GeistMono Nerd Font Mono"
+font-family-italic = "MonaspiceNe Nerd Font Mono"
+font-family-bold-italic = "MonaspiceNe Nerd Font Mono"
 font-style = Regular
-font-size = 9
+font-size = 11
+font-feature = -calt, -liga, -dlig
+adjust-cell-height = -20%
+adjust-cell-width = -8%
 
 # Window
 window-theme = ghostty
-window-padding-x = 14
-window-padding-y = 14
+window-padding-x = 4
+window-padding-y = 4
 confirm-close-surface=false
 resize-overlay = never
 gtk-toolbar-style = flat
+macos-titlebar-style = hidden
 
 # Cursor styling
 cursor-style = "block"
@@ -50,8 +56,12 @@ keybind = super+control+shift+alt+arrow_down=resize_split:down,100
 keybind = super+control+shift+alt+arrow_up=resize_split:up,100
 keybind = super+control+shift+alt+arrow_left=resize_split:left,100
 keybind = super+control+shift+alt+arrow_right=resize_split:right,100
+keybind = global:cmd+alt+j=toggle_quick_terminal
 
 # Slowdown mouse scrolling
 mouse-scroll-multiplier = 0.95
 
 minimum-contrast = 2.5
+
+
+macos-option-as-alt = true
